@@ -1,6 +1,6 @@
 RECON:
 (Get-WmiObject -Class Win32_OperatingSystem | select SystemDirectory,BuildNumber,SerialNumber,Version | ft > blah.txt); (Get-Service | ? {$_.Status -eq "Running"} | select -First 2 |fl >> blah.txt); (Get-MpComputerStatus >> blah.txt)
-($a="b.log";$b="C:\\Windows";icacls $b > $a;whoami >> $a;Get-WmiObject -Class Win32_OperatingSystem|select SystemDirectory,BuildNumber,SerialNumber,Version|ft >> $a;Get-MpComputerStatus >> $a)
+($a="b.log";$b="C:\\Windows\*";icacls $b > $a;whoami >> $a;Get-WmiObject -Class Win32_OperatingSystem|select SystemDirectory,BuildNumber,SerialNumber,Version|ft >> $a;Get-MpComputerStatus >> $a)
 
 
 FILE MANAGMENT:
