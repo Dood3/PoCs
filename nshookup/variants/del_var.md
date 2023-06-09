@@ -47,8 +47,9 @@ This will most likely trigger AV (AMSI).<br>
 
 
 *Icons:*<br>
-<font size=”1”>
+<font size="1">
 https://www.flaticon.com/free-icons/computer  <br>
 https://icons8.com/icon/set/firewall-png/glyph-neue <br>
-https://icons8.com/icons/set/computer <br> </font>
+https://icons8.com/icons/set/computer <br> 
+</font>
 
