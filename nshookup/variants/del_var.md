@@ -8,7 +8,7 @@ DNS Server TXT entry:<br>
 
 The outcome is `powershell ping google.com` being executed in the current session on the clients system.
 
-![GRAPHIC_1](https://github.com/Dood3/PoCs/assets/93183445/f50b4ce4-602b-4005-82a2-e49179797da8)
+![GRAPHIC_1 1](https://github.com/Dood3/PoCs/assets/93183445/d550b7d7-db51-42da-9834-b89f5c792bfb)
 
 
 
@@ -22,7 +22,7 @@ DNS Server TXT entry:<br>
 The file hosting the payload is not bound to any file formats. A simple file without suffix will work. 
 This request will probably trigger AV (AMSI). If "IEX" doesn't get caught, the delivered payload itself most likely will.*<br>
 
-![GRAPHIC_2](https://github.com/Dood3/PoCs/assets/93183445/6295abaa-581a-4a33-98fe-ce553b699eca)
+![GRAPHIC_2 1](https://github.com/Dood3/PoCs/assets/93183445/3954f3ed-4196-497e-a369-14a5d71355d9)
 
 
 
@@ -42,7 +42,8 @@ This will most likely trigger AV (AMSI).<br>
 3. `Command gets delivered to Client (over dns)`<br>
 4. `Reverse shell phoning home`<br>
 
-![GRAPHIC_3](https://github.com/Dood3/PoCs/assets/93183445/a788e181-a486-44da-8237-c5dffc8b863b)
+![GRAPHIC_3 1](https://github.com/Dood3/PoCs/assets/93183445/c8fe7f80-361c-4ccc-9249-8c345ce14351)
+
 <br><br><br><br><br><br><br>
 
 
